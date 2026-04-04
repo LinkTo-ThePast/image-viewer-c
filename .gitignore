@@ -55,3 +55,7 @@ dkms.conf
 *.dwo
 *.slnx
 *.vs
+*.tlog
+*.lastbuildstate
+*.log
+*.vcxproj*
