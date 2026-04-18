@@ -59,3 +59,4 @@ dkms.conf
 *.lastbuildstate
 *.log
 *.vcxproj.user
+*exe.recipe
