@@ -19,8 +19,14 @@ int main() {
 	// map RGB
 	Uint32 color = SDL_MapRGB(currentSurface->format, r, g, b);
 	
+
+	int x = 50;
+	int y = 50;
+
+	SDL_Rect rectPixel = (SDL_Rect){ x,y,1,1 };
+	
 	// establish the surface as a rectangle to fill
-	SDL_FillRect(currentSurface, NULL, color);
+	SDL_FillRect(currentSurface, &rectPixel, color);
 	// update surface to track new changes
 	SDL_UpdateWindowSurface(window);
 	
