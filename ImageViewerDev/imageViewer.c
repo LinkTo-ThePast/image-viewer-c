@@ -5,8 +5,11 @@
 int main() {
 	printf("Image viewer project.");
 	
+	const HEIGHT = 900;
+	const WIDTH = 600;
+	
 	// create a window
-	SDL_Window *window = SDL_CreateWindow("Image Viewer", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, 900, 600, NULL);
+	SDL_Window *window = SDL_CreateWindow("Image Viewer", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, HEIGHT, WIDTH, NULL);
 
 	// access to the surface´s window
 	SDL_Surface *currentSurface = SDL_GetWindowSurface(window);
@@ -21,13 +24,16 @@ int main() {
 	Uint32 color = SDL_MapRGB(currentSurface->format, r, g, b);
 	
 
-	int x = 50;
-	int y = 50;
-
-	SDL_Rect rectPixel = (SDL_Rect){ x,y,1,1 };
+	int x;
 	
-	// establish the surface as a rectangle to fill
-	SDL_FillRect(currentSurface, &rectPixel, color);
+
+	for (int x = 0; x <= WIDTH; x++) 
+	{
+		SDL_Rect rectPixel = (SDL_Rect){ x,x,1,1 };
+		SDL_FillRect(currentSurface, &rectPixel, color);
+	
+	}
+
 	// update surface to track new changes
 	SDL_UpdateWindowSurface(window);
 	
