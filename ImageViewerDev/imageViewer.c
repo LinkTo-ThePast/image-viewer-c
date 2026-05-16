@@ -13,8 +13,9 @@ int main() {
 
 	// pixel format
 	Uint8 r, g, b;
-	r = 0xFF;
-	g = b = 0;
+	r = 0;
+	g = 0xFF;
+	b = 0;
 	
 	// map RGB
 	Uint32 color = SDL_MapRGB(currentSurface->format, r, g, b);
@@ -35,5 +36,5 @@ int main() {
 	SDL_Delay(4000);
 	
 
-	return 0;
+	return 0; 
 }
